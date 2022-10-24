@@ -11,10 +11,27 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Text("Home screen"),
-      ),
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+            children: [
+              TextButton.icon(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/location');
+                  },
+                  icon: Icon(
+                    Icons.edit_location,
+                    color: Colors.black,
+
+                  ),
+                  label: Text(
+                    "Edit Location",
+                    style: TextStyle(
+                      color: Colors.black
+                    ),
+                  ))
+            ],
+          )),
     );
   }
 }
